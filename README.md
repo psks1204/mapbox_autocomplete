@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter MapBox AutoComplete',
+      title: 'MapBox AutoComplete',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
