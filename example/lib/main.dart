@@ -1,21 +1,4 @@
-# mapbox_autocomplete
-
-
-A Updated Flutter Package for MapBox Places autocomplete.
-
-## Installation
-
-Use the package manager [pub.dev](https://pub.dev/) to install **mapbox_autocomplete**.
-
-```bash
-dependencies:
-  mapbox_autocomplete: ^0.0.1
-
-and run flutter pub get
-```
-## Usage
-
-```flutter
+import 'package:flutter/material.dart';
 import 'package:mapbox_autocomplete/mapbox_autocomplete.dart';
 
 void main() => runApp(MyApp());
@@ -24,10 +7,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter MapBox AutoComplete',
+      title: 'MapBox AutoComplete',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: Home(),
     );
   }
@@ -56,13 +40,13 @@ class _HomeState extends State<Home> {
               context,
               MaterialPageRoute(
                 builder: (context) => MapBoxAutoCompleteWidget(
-                  apiKey: "Your MapBox token here",
+                  apiKey: "Enter your MapBox API",
                   hint: "Select starting point",
                   onSelect: (place) {
-                    // TODO : Process the result gotten
                     _startPointController.text = place.placeName;
                   },
                   limit: 10,
+                  country: "NG",
                 ),
               ),
             );
@@ -73,19 +57,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-```
-
-## Screenshots
-<p>
-    <img src="https://raw.githubusercontent.com/psks1204/mapbox_autocomplete/main/screenshots/1.png" width="200px" height="auto" hspace="20"/>
-    <img src="https://raw.githubusercontent.com/psks1204/mapbox_autocomplete/main/screenshots/2.png" width="200px" height="auto" hspace="20"/>
-    <img src="https://raw.githubusercontent.com/psks1204/mapbox_autocomplete/main/screenshots/3.png" width="200px" height="auto" hspace="20"/>
-</p>
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
